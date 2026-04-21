@@ -1,0 +1,632 @@
+﻿---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="page-glow glow-a"></div>
+  <div class="page-glow glow-b"></div>
+
+  <header class="header container">
+    <a class="brand" href="#inicio" aria-label="Inicio Integradata">
+      <img src="/logo.png" alt="Integradata" />
+    </a>
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#faq">Páginas</a>
+      <a class="btn btn-sm btn-cta" href="#contacto">Empezar <span>&rarr;</span></a>
+    </nav>
+    <button class="menu-btn" aria-label="Abrir menú">&#9776;</button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero-shell container">
+      <div class="hero-main" data-reveal>
+        <div class="welcome-pill">Integradata, tu partner tecnológico</div>
+        <h1>
+          Sistematiza 
+          <span>tus procesos manuales</span>
+        </h1>
+        <p class="hero-intro">
+          Ayudamos a empresas con procesos manuales desordenados a sistematizar, integrar y automatizar su operación para decidir mejor y crecer más rápido.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#contacto">Comenzar</a>
+          <a class="btn btn-ghost" href="#servicios">Saber más</a>
+        </div>
+
+        <img class="hero-device hero-landing-shot" src="/landing-web.webp" alt="Landing web Integradata" />
+
+        <div class="hero-social">
+          <a href="#contacto" aria-label="Facebook">
+            <img class="icon-default" src="/facebook.png" alt="" />
+            <img class="icon-hover" src="/facebook_color.png" alt="" />
+          </a>
+          <a href="#contacto" aria-label="LinkedIn">
+            <img class="icon-default" src="/linkedin.png" alt="" />
+            <img class="icon-hover" src="/linkedin_color.png" alt="" />
+          </a>
+          <a href="#contacto" aria-label="Instagram">
+            <img class="icon-default" src="/instagram.png" alt="" />
+            <img class="icon-hover" src="/instagram_color.png" alt="" />
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-side" data-reveal>
+        <img class="hero-water" src="/agua.jpg" alt="Flujo visual azul Integradata" />
+        <div class="hero-tags">
+          <span>Integración de Datos</span>
+          <span>Pipelines ETL</span>
+          <span>Dashboards KPI</span>
+          <span>Inteligencia de Negocio</span>
+          <span>Automatización</span>
+          <span>Gobierno de Datos</span>
+          <span>Analítica de Crecimiento</span>
+          <span>Insights con IA</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="ticker">
+      <div class="ticker-track">
+        <span>Automatización de reportes</span>
+        <span>Modelado de datos</span>
+        <span>Integración ETL</span>
+        <span>Dashboards ejecutivos</span>
+        <span>Visibilidad en tiempo real</span>
+        <span>Decisiones basadas en evidencia</span>
+        <span>Automatización de reportes</span>
+        <span>Modelado de datos</span>
+        <span>Integración ETL</span>
+        <span>Dashboards ejecutivos</span>
+      </div>
+    </section>
+
+    <section class="section container feature-showcase" id="features">
+      <div class="feature-pill" data-reveal>Analítica y BI</div>
+      <h2 data-reveal>Funciones de Analítica de Datos<br />e Inteligencia de Negocios</h2>
+
+      <div class="feature-coverflow" data-feature-carousel data-reveal>
+        <div class="feature-track" aria-live="polite">
+          <article class="feature-slide" data-title="Analítica Operacional">
+            <div class="card-swiper">
+              <img src="/ca-dash-carrusel1.webp" class="img-fluid w-100" alt="Analítica Operacional" />
+              <h4>Analítica Operacional</h4>
+              <p>Visualiza el rendimiento diario de tu operación con indicadores claros para detectar desvíos y actuar rápido.</p>
+              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+            </div>
+          </article>
+          <article class="feature-slide" data-title="KPI en Tiempo Real">
+            <div class="card-swiper">
+              <img src="/ca-dash-carrusel2.webp" class="img-fluid w-100" alt="KPI en Tiempo Real" />
+              <h4>KPI en Tiempo Real</h4>
+              <p>Monitorea ventas, productividad y cumplimiento con tableros actualizados para decisiones basadas en evidencia.</p>
+              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+            </div>
+          </article>
+          <article class="feature-slide" data-title="Tableros Ejecutivos de BI">
+            <div class="card-swiper">
+              <img src="/ca-dash-carrusel3.webp" class="img-fluid w-100" alt="Tableros Ejecutivos de BI" />
+              <h4>Tableros Ejecutivos de BI</h4>
+              <p>Consolida múltiples fuentes de datos en un solo panel para gerencia, área comercial y operaciones.</p>
+              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+            </div>
+          </article>
+          <article class="feature-slide" data-title="Integración de Datos ETL">
+            <div class="card-swiper">
+              <img src="/ca-dash-carrusel4.webp" class="img-fluid w-100" alt="Integración de Datos ETL" />
+              <h4>Integración de Datos ETL</h4>
+              <p>Extrae, transforma y carga información desde ERP, CRM, API y planillas para obtener datos consistentes.</p>
+              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+            </div>
+          </article>
+          <article class="feature-slide" data-title="Inteligencia de Negocios">
+            <div class="card-swiper">
+              <img src="/ca-dash-carrusel5.webp" class="img-fluid w-100" alt="Inteligencia de Negocios" />
+              <h4>Inteligencia de Negocios</h4>
+              <p>Transforma datos en estrategias accionables con análisis comparativo, tendencias y alertas inteligentes.</p>
+              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+            </div>
+          </article>
+        </div>
+        <div class="feature-dots" role="tablist" aria-label="Diapositivas de funciones">
+          <button aria-label="Función 1" data-feature-dot="0"></button>
+          <button aria-label="Función 2" data-feature-dot="1"></button>
+          <button aria-label="Función 3" data-feature-dot="2"></button>
+          <button aria-label="Función 4" data-feature-dot="3"></button>
+          <button aria-label="Función 5" data-feature-dot="4"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container split">
+      <div data-reveal>
+        <p class="kicker">El problema que resolvemos</p>
+        <h2>Si tu operación depende de planillas sueltas, estás perdiendo foco</h2>
+        <p class="muted">
+          La falta de estructura en los datos genera errores, retrabajo y decisiones tardías. En Integradata ordenamos el flujo de información para que cada área trabaje con una sola versión de la verdad.
+        </p>
+        <a class="btn btn-ghost" href="#proceso">Ver metodología</a>
+      </div>
+      <div class="metric-grid" data-reveal>
+        <article class="metric-card">
+          <strong data-counter="85">0</strong>
+          <p>Reducción potencial de trabajo manual repetitivo</p>
+        </article>
+        <article class="metric-card">
+          <strong data-counter="3">0</strong>
+          <p>Etapas clave en nuestro proceso ETL</p>
+        </article>
+        <article class="metric-card">
+          <strong data-counter="100">0</strong>
+          <p>Soluciones diseñadas según objetivos del cliente</p>
+        </article>
+        <article class="metric-card">
+          <strong data-counter="24">0</strong>
+          <p>Decisiones más rápidas con información consolidada</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="servicios" class="section container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Qué hacemos</p>
+        <h2>Soluciones para convertir datos en ventaja competitiva</h2>
+      </div>
+      <div class="service-list">
+        <article class="service-item" data-reveal>
+          <span>01</span>
+          <div>
+            <h3>Data Analytics y Reportería</h3>
+            <p>Dashboards interactivos y KPIs accionables para ventas, asistencia, productividad y control operacional.</p>
+          </div>
+        </article>
+        <article class="service-item" data-reveal>
+          <span>02</span>
+          <div>
+            <h3>Gestión e Integración de Datos</h3>
+            <p>Procesos ETL para extraer, limpiar, transformar y cargar datos desde ERP, CRM, APIs, planillas y bases de datos.</p>
+          </div>
+        </article>
+        <article class="service-item" data-reveal>
+          <span>03</span>
+          <div>
+            <h3>Desarrollo y Automatización a Medida</h3>
+            <p>Aplicaciones y paneles para sistematizar flujos internos, eliminar tareas manuales y escalar sin fricción.</p>
+          </div>
+        </article>
+        <article class="service-item" data-reveal>
+          <span>04</span>
+          <div>
+            <h3>Analítica con Inteligencia Artificial</h3>
+            <p>Capa de IA para resumir resultados, detectar patrones y apoyar decisiones estratégicas con contexto del negocio.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="proceso" class="section container process">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Cómo trabajamos</p>
+        <h2>Implementación en 3 pasos simples y efectivos</h2>
+      </div>
+      <div class="steps">
+        <article class="step-card" data-reveal>
+          <span>01</span>
+          <h3>Levantamiento y diagnóstico</h3>
+          <p>Mapeamos fuentes de datos, cuellos de botella y objetivos de cada área para diseñar una arquitectura útil para el negocio.</p>
+        </article>
+        <article class="step-card" data-reveal>
+          <span>02</span>
+          <h3>Integración y transformación ETL</h3>
+          <p>Consolidamos la información, estandarizamos reglas y dejamos datos consistentes listos para explotar en reportería.</p>
+        </article>
+        <article class="step-card" data-reveal>
+          <span>03</span>
+          <h3>Visualización y mejora continua</h3>
+          <p>Entregamos tableros claros para seguimiento en tiempo real y optimizamos continuamente según resultados.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="nosotros" class="section container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Quiénes somos</p>
+        <h2>Tu partner tecnológico para crecer con orden y claridad</h2>
+      </div>
+      <div class="cards-3">
+        <article class="info-card" data-reveal>
+          <h3>Misión</h3>
+          <p>Mejorar el desempeño y la rentabilidad de las organizaciones mediante inteligencia de negocio y soluciones tecnológicas personalizadas.</p>
+        </article>
+        <article class="info-card" data-reveal>
+          <h3>Visión</h3>
+          <p>Ser referentes en soluciones innovadoras y efectivas para pymes y empresas que buscan decisiones basadas en información confiable.</p>
+        </article>
+        <article class="info-card" data-reveal>
+          <h3>Valores</h3>
+          <p>Innovación, transparencia, mejora continua, trabajo colaborativo y compromiso real con cada cliente.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonios" class="section container testimonials">
+      <div class="section-head testimonials-head" data-reveal>
+        <p class="kicker">Testimonial</p>
+        <h2>Lo que nuestros clientes dicen sobre Integradata</h2>
+      </div>
+
+      <div class="testimonials-board" data-reveal>
+        <div class="testimonials-grid">
+          <article class="testimonial-card top-hover" data-reveal>
+            <div class="testimonial-company">Caja Los Andes</div>
+            <p>
+              “Integradata se convirtió en una extensión de nuestro equipo.
+              Logramos analítica más rápida, clara y accionable.”
+            </p>
+          </article>
+
+          <article class="testimonial-media laptop" data-reveal>
+            <img src="/laptop-mesa.webp" alt="Dashboard en laptop sobre escritorio" />
+          </article>
+
+          <article class="testimonial-card top-hover" data-reveal>
+            <div class="testimonial-company">ControlSure</div>
+            <p>
+              “Centralizamos reportes y logramos una visión unificada del
+              negocio para decidir con más confianza.”
+            </p>
+          </article>
+
+          <article class="testimonial-card" data-reveal>
+            <div class="testimonial-company">DBS store</div>
+            <p>
+              “La integración entre canales nos dio control real de ventas,
+              inventario y rendimiento de tiendas.”
+            </p>
+          </article>
+
+          <article class="testimonial-card top-hover" data-reveal>
+            <div class="testimonial-company">nutrapharm</div>
+            <p>
+              “Automatizamos indicadores comerciales y operacionales,
+              mejorando velocidad y precisión.”
+            </p>
+          </article>
+
+          <article class="testimonial-media portrait" data-reveal>
+            <img src="/persona.webp" alt="Cliente de Integradata" />
+          </article>
+
+          <article class="testimonial-card painland-card" data-reveal>
+            <div class="testimonial-company">PainLand</div>
+            <p>
+              “Con BI y analítica avanzada identificamos patrones clave y
+              priorizamos acciones de alto impacto.”
+            </p>
+          </article>
+
+          <article class="testimonial-media bars" data-reveal>
+            <img src="/semana.jpg" alt="Gráfico semanal de rendimiento" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section container faq">
+      <div class="section-head" data-reveal>
+        <p class="kicker">Preguntas frecuentes</p>
+        <h2>Respuestas claras antes de comenzar</h2>
+      </div>
+      <div class="faq-list" data-reveal>
+        <details open>
+          <summary>¿Qué tipo de empresas pueden trabajar con Integradata?</summary>
+          <p>Trabajamos con pymes y empresas que tienen procesos manuales, información dispersa y necesidad de mayor control y visibilidad.</p>
+        </details>
+        <details>
+          <summary>¿Debo cambiar todos mis sistemas actuales?</summary>
+          <p>No. Nuestra propuesta se integra a tus herramientas actuales y las conecta para que tus datos fluyan de forma ordenada.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda una implementación?</summary>
+          <p>Depende del alcance. Normalmente iniciamos con un diagnóstico y un primer entregable funcional en pocas semanas.</p>
+        </details>
+        <details>
+          <summary>¿Pueden crear dashboards por área?</summary>
+          <p>Sí. Diseñamos tableros específicos para gerencia, área comercial, operaciones, RR. HH. y cualquier unidad que requiera seguimiento.</p>
+        </details>
+      </div>
+    </section>
+
+    <section id="contacto" class="section container contact-cta" data-reveal>
+      <p class="kicker">Hablemos de tu operación</p>
+      <h2>Comienza a sistematizar hoy y decide con confianza</h2>
+      <p>Agenda una conversación con nuestro equipo para revisar tus procesos y definir una ruta de implementación clara.</p>
+      <div class="contact-pills">
+        <a href="mailto:contacto@integradata.cl">contacto@integradata.cl</a>
+        <a href="tel:+56994323583">+56 9 9432 3583</a>
+        <span>Av. Vitacura 2939, Of. 301, Las Condes, Santiago</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p>&copy; <span id="year"></span> Integradata. Datos ordenados, decisiones inteligentes.</p>
+    <p><a href="/politicas_y_privacidad/">Políticas de privacidad</a></p>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Integradata",
+      "url": "https://integradata.cl/",
+      "email": "contacto@integradata.cl",
+      "telephone": "+56 9 9432 3583",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Vitacura 2939, Of. 301",
+        "addressLocality": "Las Condes",
+        "addressRegion": "Santiago",
+        "addressCountry": "CL"
+      }
+    }
+  </script>
+  <script is:inline>
+    const yearNode = document.querySelector("#year");
+    const menuBtn = document.querySelector(".menu-btn");
+    const nav = document.querySelector(".nav");
+    const revealEls = document.querySelectorAll("[data-reveal]");
+    const counters = document.querySelectorAll("[data-counter]");
+
+    if (yearNode) yearNode.textContent = String(new Date().getFullYear());
+
+    if (menuBtn && nav) {
+      menuBtn.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+
+      nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => nav.classList.remove("open"));
+      });
+    }
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reducedMotion) {
+      revealEls.forEach((el) => el.classList.add("is-visible"));
+      counters.forEach((counter) => {
+        const value = counter.getAttribute("data-counter") || "0";
+        counter.textContent = value + (value === "85" || value === "100" ? "%" : "+");
+      });
+    } else {
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.target.classList.contains("hero-side")) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible");
+              }
+              return;
+            }
+
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+
+      const animateCounter = (node) => {
+        const target = Number(node.getAttribute("data-counter") || "0");
+        const suffix = target === 85 || target === 100 ? "%" : "+";
+        const duration = 1100;
+        const start = performance.now();
+
+        const frame = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          node.textContent = `${value}${suffix}`;
+          if (progress < 1) requestAnimationFrame(frame);
+        };
+
+        requestAnimationFrame(frame);
+      };
+
+      const counterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.35 }
+      );
+
+      counters.forEach((counter) => counterObserver.observe(counter));
+    }
+
+    const featureCarousel = document.querySelector("[data-feature-carousel]");
+
+    if (featureCarousel) {
+      const slides = Array.from(featureCarousel.querySelectorAll(".feature-slide"));
+      const dots = Array.from(featureCarousel.querySelectorAll("[data-feature-dot]"));
+      const count = slides.length;
+      let activeIndex = Math.floor(count / 2);
+      let dragStartX = 0;
+      let dragStartIndex = 0;
+      let isDragging = false;
+      let suppressClick = false;
+
+      const normalizeIndex = (value) => {
+        const mod = value % count;
+        return mod < 0 ? mod + count : mod;
+      };
+
+      const wrapDistance = (index, indexFloat) => {
+        let d = index - indexFloat;
+        if (d > count / 2) d -= count;
+        if (d < -count / 2) d += count;
+        return d;
+      };
+
+      const render = (indexFloat, animateEnter = false) => {
+        slides.forEach((slide, index) => {
+          const rel = wrapDistance(index, indexFloat);
+          const relAbs = Math.abs(rel);
+          const inRange = relAbs <= 2.2;
+
+          if (!inRange) {
+            slide.style.setProperty("--tx", "0px");
+            slide.style.setProperty("--ty", "0px");
+            slide.style.setProperty("--s", "0.62");
+            slide.style.setProperty("--o", "0");
+            slide.style.setProperty("--z", "0");
+            slide.style.setProperty("--blur", "2px");
+            slide.style.setProperty("--shade", "rgba(20, 28, 44, 0.44)");
+            slide.style.setProperty("--img-filter", "saturate(0.5) brightness(0.62)");
+            slide.classList.remove("is-active", "is-entering");
+            return;
+          }
+
+          const side = rel < 0 ? -1 : 1;
+          const depth = relAbs;
+          const tx = side * (depth * 162 + Math.pow(depth, 1.16) * 12);
+          const ty = depth * 18;
+          const scale = Math.max(0.7, 1 - depth * 0.14);
+          const opacity = Math.max(0.64, 1 - depth * 0.1);
+          const zIndex = Math.round(100 - depth * 16);
+          const blur = `${Math.max(0, depth * 0.85)}px`;
+          const shadeAlpha = Math.min(0.52, depth * 0.14);
+          const shade = `rgba(20, 28, 44, ${shadeAlpha.toFixed(3)})`;
+          const imgFilter =
+            depth <= 0.08
+              ? "none"
+              : `saturate(${Math.max(0.58, 1 - depth * 0.16).toFixed(3)}) brightness(${Math.max(0.62, 1 - depth * 0.18).toFixed(3)})`;
+
+          slide.style.setProperty("--tx", `${tx.toFixed(2)}px`);
+          slide.style.setProperty("--ty", `${ty.toFixed(2)}px`);
+          slide.style.setProperty("--s", scale.toFixed(3));
+          slide.style.setProperty("--o", opacity.toFixed(3));
+          slide.style.setProperty("--z", String(zIndex));
+          slide.style.setProperty("--blur", blur);
+          slide.style.setProperty("--shade", shade);
+          slide.style.setProperty("--img-filter", imgFilter);
+
+          const isActive = relAbs < 0.45;
+          slide.classList.toggle("is-active", isActive);
+          if (!isActive) slide.classList.remove("is-entering");
+
+          if (animateEnter && isActive) {
+            slide.classList.add("is-entering");
+            window.setTimeout(() => slide.classList.remove("is-entering"), 360);
+          }
+        });
+
+        const dotIndex = normalizeIndex(Math.round(indexFloat));
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("is-active", index === dotIndex);
+        });
+      };
+
+      const goTo = (newIndex, animateEnter = true) => {
+        activeIndex = normalizeIndex(newIndex);
+        render(activeIndex, animateEnter);
+      };
+
+      const next = () => goTo(activeIndex + 1);
+
+      const prev = () => goTo(activeIndex - 1);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => goTo(index));
+      });
+
+      featureCarousel.addEventListener("pointerdown", (event) => {
+        isDragging = true;
+        dragStartX = event.clientX;
+        dragStartIndex = activeIndex;
+        suppressClick = false;
+        featureCarousel.classList.add("is-dragging");
+        featureCarousel.setPointerCapture(event.pointerId);
+      });
+
+      featureCarousel.addEventListener("pointermove", (event) => {
+        if (!isDragging) return;
+        const deltaX = event.clientX - dragStartX;
+        if (Math.abs(deltaX) > 5) suppressClick = true;
+        const dragProgress = -deltaX / 230;
+        const floatIndex = dragStartIndex + dragProgress;
+        render(floatIndex, false);
+      });
+
+      featureCarousel.addEventListener("pointerup", (event) => {
+        if (!isDragging) return;
+        const deltaX = event.clientX - dragStartX;
+        const dragProgress = -deltaX / 230;
+        const targetIndex = normalizeIndex(Math.round(dragStartIndex + dragProgress));
+        goTo(targetIndex);
+
+        isDragging = false;
+        featureCarousel.classList.remove("is-dragging");
+        featureCarousel.releasePointerCapture(event.pointerId);
+        window.setTimeout(() => {
+          suppressClick = false;
+        }, 80);
+      });
+
+      featureCarousel.addEventListener("pointerleave", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        featureCarousel.classList.remove("is-dragging");
+        goTo(activeIndex, false);
+      });
+
+      featureCarousel.addEventListener("pointercancel", () => {
+        isDragging = false;
+        featureCarousel.classList.remove("is-dragging");
+        goTo(activeIndex, false);
+      });
+
+      featureCarousel.addEventListener("click", (event) => {
+        if (suppressClick) return;
+
+        const dotTarget = event.target.closest("[data-feature-dot]");
+        if (dotTarget) return;
+
+        const slideTarget = event.target.closest(".feature-slide");
+        if (slideTarget) {
+          const index = slides.indexOf(slideTarget);
+          if (index === -1) return;
+          if (index === activeIndex) {
+            next();
+            return;
+          }
+          goTo(index);
+          return;
+        }
+
+        next();
+      });
+
+      featureCarousel.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight") next();
+        if (event.key === "ArrowLeft") prev();
+      });
+
+      featureCarousel.setAttribute("tabindex", "0");
+      render(activeIndex, false);
+    }
+  </script>
+</BaseLayout>
+
+

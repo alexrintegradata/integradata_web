@@ -1,0 +1,151 @@
+{
+  "agent": "web-impact-apple",
+  "version": "1.0.0",
+  "defaults": {
+    "design_contract": "agents/web-impact-apple/AGENT_SPEC.md",
+    "skills_protocol": "agents/web-impact-apple/SKILLS_PROTOCOL.md"
+  },
+  "skills": [
+    {
+      "id": "core-design-system",
+      "name": "Core Design System Guard",
+      "version": "1.0.0",
+      "description": "Protects visual consistency, token integrity, and motion quality.",
+      "owner": "team-web",
+      "priority": 100,
+      "enabled": true,
+      "scope": [
+        "layout",
+        "components",
+        "animation",
+        "accessibility",
+        "performance"
+      ],
+      "constraints": [
+        "Respect AGENT_SPEC.md",
+        "Keep prefers-reduced-motion fallback",
+        "No generic UI patterns"
+      ],
+      "entrypoint": "Apply core standards before any feature implementation.",
+      "notes": "Base guard skill that all incoming skills must be compatible with."
+    },
+    {
+      "id": "frontend-design",
+      "name": "Frontend Design",
+      "version": "1.0.0",
+      "description": "Patrones de diseño frontend y criterios de calidad visual.",
+      "owner": "external-skill",
+      "priority": 95,
+      "enabled": true,
+      "scope": [
+        "layout",
+        "components",
+        "accessibility"
+      ],
+      "constraints": [
+        "Respect AGENT_SPEC.md",
+        "Do not break core token system"
+      ],
+      "entrypoint": "Apply for structure and visual polishing of landing pages.",
+      "source_path": ".agents/skills/frontend-design/SKILL.md"
+    },
+    {
+      "id": "web-design-guidelines",
+      "name": "Web Design Guidelines",
+      "version": "1.0.0",
+      "description": "Guías base de diseño web para consistencia y claridad.",
+      "owner": "external-skill",
+      "priority": 94,
+      "enabled": true,
+      "scope": [
+        "layout",
+        "design-rules"
+      ],
+      "constraints": [
+        "Maintain Apple-like quality bar",
+        "Keep responsive parity"
+      ],
+      "entrypoint": "Use for baseline design decisions.",
+      "source_path": ".agents/skills/web-design-guidelines/SKILL.md"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "name": "UI UX Pro Max",
+      "version": "1.0.0",
+      "description": "Skill avanzado para UI/UX de alto impacto.",
+      "owner": "external-skill",
+      "priority": 93,
+      "enabled": true,
+      "scope": [
+        "components",
+        "motion",
+        "ux-flow"
+      ],
+      "constraints": [
+        "Motion must remain intentional",
+        "Respect reduced-motion accessibility"
+      ],
+      "entrypoint": "Use for premium interaction and visual refinement.",
+      "source_path": ".agents/skills/ui-ux-pro-max/SKILL.md"
+    },
+    {
+      "id": "seo-audit",
+      "name": "SEO Audit",
+      "version": "1.0.0",
+      "description": "Checklist y auditoría SEO para páginas de marketing.",
+      "owner": "external-skill",
+      "priority": 86,
+      "enabled": true,
+      "scope": [
+        "metadata",
+        "technical-seo",
+        "content-quality"
+      ],
+      "constraints": [
+        "Do not degrade UX for SEO hacks",
+        "Keep messaging user-centric"
+      ],
+      "entrypoint": "Run when validating production readiness.",
+      "source_path": ".agents/skills/seo-audit/SKILL.md"
+    },
+    {
+      "id": "programmatic-seo",
+      "name": "Programmatic SEO",
+      "version": "1.0.0",
+      "description": "Escalamiento SEO basado en estructuras reutilizables.",
+      "owner": "external-skill",
+      "priority": 85,
+      "enabled": true,
+      "scope": [
+        "seo-templates",
+        "content-architecture"
+      ],
+      "constraints": [
+        "Avoid thin content",
+        "Keep semantic quality high"
+      ],
+      "entrypoint": "Use when scaling service/location pages.",
+      "source_path": ".agents/skills/programmatic-seo/SKILL.md"
+    },
+    {
+      "id": "seo-geo",
+      "name": "SEO GEO",
+      "version": "1.0.0",
+      "description": "Optimización SEO geolocalizada y señal local.",
+      "owner": "external-skill",
+      "priority": 84,
+      "enabled": true,
+      "scope": [
+        "local-seo",
+        "geo-content",
+        "schema"
+      ],
+      "constraints": [
+        "Use accurate location details",
+        "Avoid keyword stuffing"
+      ],
+      "entrypoint": "Apply for local search visibility strategies.",
+      "source_path": ".agents/skills/seo-geo/SKILL.md"
+    }
+  ]
+}
