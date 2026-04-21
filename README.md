@@ -31,3 +31,7 @@ Se creo un agente especialista en web premium estilo Apple en:
 2. Registra el skill en `agents/web-impact-apple/skills/skills.manifest.json`.
 3. Respeta las reglas de `AGENT_SPEC.md` y `SKILLS_PROTOCOL.md`.
 4. Define prioridad para resolver conflictos entre skills.
+
+## Template web
+
+`https://html.rometheme.net/bitelo/index.html`
