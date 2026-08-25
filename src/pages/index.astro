@@ -40,15 +40,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <img class="hero-device hero-landing-shot" src="/landing-web.webp" alt="Landing web Integradata" />
 
         <div class="hero-social">
-          <a href="#contacto" aria-label="Facebook">
+          <span class="social-icon" aria-hidden="true">
             <img class="icon-default" src="/facebook.png" alt="" />
             <img class="icon-hover" src="/facebook_color.png" alt="" />
-          </a>
-          <a href="#contacto" aria-label="LinkedIn">
+          </span>
+          <a
+            class="social-icon"
+            href="https://www.linkedin.com/company/integradata-cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Integradata"
+          >
             <img class="icon-default" src="/linkedin.png" alt="" />
             <img class="icon-hover" src="/linkedin_color.png" alt="" />
           </a>
-          <a href="#contacto" aria-label="Instagram">
+          <a
+            class="social-icon"
+            href="https://www.instagram.com/integradata.cl/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Integradata"
+          >
             <img class="icon-default" src="/instagram.png" alt="" />
             <img class="icon-hover" src="/instagram_color.png" alt="" />
           </a>
@@ -290,7 +302,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </article>
 
           <article class="testimonial-card top-hover" data-reveal>
-            <div class="testimonial-company">nutrapharm</div>
+            <div class="testimonial-company">Nutrapharm</div>
             <p>
               “Automatizamos indicadores comerciales y operacionales,
               mejorando velocidad y precisión.”
