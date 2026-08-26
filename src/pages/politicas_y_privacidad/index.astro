@@ -2,26 +2,15 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Políticas de privacidad | Integradata" description="Políticas de privacidad de Integradata SPA.">
+<BaseLayout
+  title="Políticas de privacidad | Integradata"
+  description="Política de privacidad de Integradata SPA: tratamiento de datos personales, navegación, analítica y derechos según la Ley N° 19.628."
+  homePrefix="/"
+>
   <div class="page-glow glow-a"></div>
   <div class="page-glow glow-b"></div>
 
-  <header class="header container">
-    <a class="brand" href="/#inicio" aria-label="Inicio Integradata">
-      <img src="/logo.png" alt="Integradata" />
-    </a>
-    <nav class="nav" aria-label="Navegación principal">
-      <a href="/#inicio">Inicio</a>
-      <a href="/#nosotros">Nosotros</a>
-      <a href="/#servicios">Servicios</a>
-      <a href="/#proceso">Proceso</a>
-      <a href="/#faq">Páginas</a>
-      <a class="btn btn-sm btn-cta" href="/#contacto">Empezar <span>&rarr;</span></a>
-    </nav>
-    <button class="menu-btn" aria-label="Abrir menú">&#9776;</button>
-  </header>
-
-  <main class="privacy-page container">
+  <main id="contenido" class="privacy-page container">
     <section class="privacy-card">
       <h1>Políticas de privacidad</h1>
 
@@ -115,24 +104,5 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       </p>
     </section>
   </main>
-
-  <footer class="footer container">
-    <p>&copy; <span id="year"></span> Integradata. Datos ordenados, decisiones inteligentes.</p>
-    <p><a href="/politicas_y_privacidad/">Políticas de privacidad</a></p>
-  </footer>
-
-  <script is:inline>
-    const yearNode = document.querySelector("#year");
-    const menuBtn = document.querySelector(".menu-btn");
-    const nav = document.querySelector(".nav");
-
-    if (yearNode) yearNode.textContent = String(new Date().getFullYear());
-
-    if (menuBtn && nav) {
-      menuBtn.addEventListener("click", () => {
-        nav.classList.toggle("open");
-      });
-    }
-  </script>
 </BaseLayout>
 

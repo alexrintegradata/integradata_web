@@ -1,33 +1,106 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  homePrefix?: string;
+  preloadImage?: string;
 }
 
+const site = Astro.site ?? new URL("https://integradata.cl");
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL("/landing-web.webp", site).href;
+
 const {
-  title = "Integradata | Sistematiza y escala con datos",
-  description = "Integradata ayuda a empresas a pasar de procesos manuales desordenados a operaciones sistematizadas con integracion de datos, ETL, reporteria y dashboards."
+  title = "ETL, dashboards y automatización de datos | Integradata",
+  description = "Sistematizamos procesos manuales con integración ETL, reportería y dashboards. Integradata ayuda a pymes en Chile a decidir con datos confiables.",
+  homePrefix = "",
+  preloadImage
 } = Astro.props;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "ProfessionalService"],
+  name: "Integradata",
+  legalName: "Integradata SPA",
+  url: "https://integradata.cl/",
+  logo: "https://integradata.cl/logo.png",
+  image: "https://integradata.cl/landing-web.webp",
+  email: "contacto@integradata.cl",
+  telephone: "+56986881400",
+  foundingDate: "2022",
+  description: "Soluciones de integración de datos, ETL, reportería, dashboards e inteligencia de negocios para empresas en Chile.",
+  areaServed: {
+    "@type": "Country",
+    name: "Chile"
+  },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Av. Vitacura 2939, oficina 301",
+    addressLocality: "Las Condes",
+    addressRegion: "Región Metropolitana",
+    addressCountry: "CL"
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: "+56986881400",
+    email: "contacto@integradata.cl",
+    availableLanguage: ["Spanish"]
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/integradata-cl/",
+    "https://www.instagram.com/integradata.cl/"
+  ]
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es-CL">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Integradata SPA" />
+    <meta name="theme-color" content="#2e63df" />
     <title>{title}</title>
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es-CL" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={new URL("/", site).href} />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Integradata" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content="Tablero y operación sistematizada con Integradata" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.scrapia.ai" />
+    <link rel="dns-prefetch" href="https://api.whatsapp.com" />
+    {preloadImage && (
+      <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />
+    )}
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <Header homePrefix={homePrefix} />
     <slot />
+    <Footer />
     <a
       class="wa-float"
       href="https://api.whatsapp.com/send?phone=56998938765"
@@ -45,8 +118,45 @@ const {
       </span>
       <span class="wa-float-label">Ventas</span>
     </a>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+    <script is:inline>
+      const yearNode = document.querySelector("[data-year]");
+      const menuBtn = document.querySelector(".menu-btn");
+      const nav = document.querySelector("#site-nav");
+
+      if (yearNode) yearNode.textContent = String(new Date().getFullYear());
+
+      if (menuBtn && nav) {
+        const setOpen = (open) => {
+          nav.classList.toggle("open", open);
+          menuBtn.setAttribute("aria-expanded", String(open));
+          menuBtn.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+        };
+
+        menuBtn.addEventListener("click", () => {
+          setOpen(!nav.classList.contains("open"));
+        });
+
+        nav.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => setOpen(false));
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") setOpen(false);
+        });
+
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          if (!(target instanceof Node)) return;
+          if (!nav.classList.contains("open")) return;
+          if (nav.contains(target) || menuBtn.contains(target)) return;
+          setOpen(false);
+        });
+      }
+    </script>
     <script
       is:inline
+      defer
       src="https://api.scrapia.ai/api/v1/webchat/embed.js"
       data-widget-id="0ba8bcb8-4ae4-473d-bf8b-577c53d3eef9"
     ></script>

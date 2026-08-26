@@ -1,0 +1,32 @@
+---
+interface Props {
+  homePrefix?: string;
+}
+
+const { homePrefix = "" } = Astro.props;
+const to = (hash: string) => `${homePrefix}${hash}`;
+---
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="header container">
+  <a class="brand" href={to("#inicio")} aria-label="Inicio Integradata">
+    <img src="/logo.png" alt="Integradata" width="768" height="140" />
+  </a>
+  <nav id="site-nav" class="nav" aria-label="Navegación principal">
+    <a href={to("#inicio")}>Inicio</a>
+    <a href={to("#nosotros")}>Nosotros</a>
+    <a href={to("#servicios")}>Servicios</a>
+    <a href={to("#proceso")}>Proceso</a>
+    <a href={to("#faq")}>FAQ</a>
+    <a class="btn btn-sm btn-cta" href={to("#contacto")}>Empezar <span aria-hidden="true">&rarr;</span></a>
+  </nav>
+  <button
+    class="menu-btn"
+    type="button"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+    aria-controls="site-nav"
+  >
+    &#9776;
+  </button>
+</header>
