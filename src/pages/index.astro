@@ -18,7 +18,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           Ayudamos a empresas con procesos manuales desordenados a sistematizar, integrar y automatizar su operación para decidir mejor y crecer más rápido.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="#contacto">Comenzar</a>
+          <a class="btn" href="#contacto">Contactar</a>
           <a class="btn btn-ghost" href="#servicios">Saber más</a>
         </div>
 
@@ -110,7 +110,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <img src="/ca-dash-carrusel1.webp" alt="Dashboard de analítica operacional" width="640" height="360" loading="lazy" decoding="async" />
               <h4>Analítica Operacional</h4>
               <p>Visualiza el rendimiento diario de tu operación con indicadores claros para detectar desvíos y actuar rápido.</p>
-              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+              <button type="button" class="feature-btn" aria-label="Siguiente diapositiva">Siguiente <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
           <article class="feature-slide" data-title="KPI en Tiempo Real">
@@ -118,7 +118,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <img src="/ca-dash-carrusel2.webp" alt="Tablero de KPI en tiempo real" width="640" height="360" loading="lazy" decoding="async" />
               <h4>KPI en Tiempo Real</h4>
               <p>Monitorea ventas, productividad y cumplimiento con tableros actualizados para decisiones basadas en evidencia.</p>
-              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+              <button type="button" class="feature-btn" aria-label="Siguiente diapositiva">Siguiente <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
           <article class="feature-slide" data-title="Tableros Ejecutivos de BI">
@@ -126,7 +126,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <img src="/ca-dash-carrusel3.webp" alt="Tablero ejecutivo de business intelligence" width="640" height="360" loading="lazy" decoding="async" />
               <h4>Tableros Ejecutivos de BI</h4>
               <p>Consolida múltiples fuentes de datos en un solo panel para gerencia, área comercial y operaciones.</p>
-              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+              <button type="button" class="feature-btn" aria-label="Siguiente diapositiva">Siguiente <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
           <article class="feature-slide" data-title="Integración de Datos ETL">
@@ -134,7 +134,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <img src="/ca-dash-carrusel4.webp" alt="Flujo de integración de datos ETL" width="640" height="360" loading="lazy" decoding="async" />
               <h4>Integración de Datos ETL</h4>
               <p>Extrae, transforma y carga información desde ERP, CRM, API y planillas para obtener datos consistentes.</p>
-              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+              <button type="button" class="feature-btn" aria-label="Siguiente diapositiva">Siguiente <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
           <article class="feature-slide" data-title="Inteligencia de Negocios">
@@ -142,7 +142,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <img src="/ca-dash-carrusel5.webp" alt="Panel de inteligencia de negocios" width="640" height="360" loading="lazy" decoding="async" />
               <h4>Inteligencia de Negocios</h4>
               <p>Transforma datos en estrategias accionables con análisis comparativo, tendencias y alertas inteligentes.</p>
-              <a href="#servicios" class="feature-btn">Ver detalle <span>&rarr;</span></a>
+              <button type="button" class="feature-btn" aria-label="Siguiente diapositiva">Siguiente <span aria-hidden="true">&rarr;</span></button>
             </div>
           </article>
         </div>
@@ -625,7 +625,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       featureCarousel.addEventListener("pointerdown", (event) => {
         if (event.pointerType === "mouse" && event.button !== 0) return;
-        if (event.target.closest("[data-feature-dot]")) return;
+        if (event.target.closest("[data-feature-dot], .feature-btn")) return;
 
         isDragging = true;
         axisLock = "";
@@ -696,7 +696,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         const dotTarget = event.target.closest("[data-feature-dot]");
         if (dotTarget) return;
-        if (event.target.closest(".feature-btn")) return;
+
+        if (event.target.closest(".feature-btn")) {
+          event.preventDefault();
+          event.stopPropagation();
+          next();
+          return;
+        }
 
         const slideTarget = event.target.closest(".feature-slide");
         if (slideTarget) {

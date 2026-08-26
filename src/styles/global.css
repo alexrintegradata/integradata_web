@@ -658,8 +658,15 @@ h1 span {
   padding: 8px 12px 8px 18px;
   color: #2e394d;
   text-decoration: none;
+  font: inherit;
   font-weight: 700;
   background: #fff;
+  cursor: pointer;
+  appearance: none;
+}
+
+.feature-btn:active {
+  transform: scale(0.97);
 }
 
 .feature-btn span {
