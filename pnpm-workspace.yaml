@@ -1,4 +1,4 @@
 allowBuilds:
   esbuild: true
-  re2: set this to true or false
   sharp: true
+  re2: false

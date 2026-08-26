@@ -1166,6 +1166,23 @@ h1 span {
   scroll-margin-bottom: 120px;
 }
 
+@media (min-width: 861px) {
+  .contact-cta.container,
+  .footer.container,
+  .privacy-page.container {
+    width: min(1700px, calc(100% - 2 * clamp(88px, 7vw, 120px)));
+    margin-inline: auto;
+  }
+
+  .contact-cta.container {
+    padding: clamp(28px, 2.4vw, 40px) clamp(28px, 3vw, 48px);
+  }
+
+  .footer.container {
+    padding-inline: clamp(28px, 3vw, 48px);
+  }
+}
+
 .contact-pills {
   margin-top: 14px;
   display: flex;
@@ -1361,6 +1378,18 @@ h1 span {
     text-align: center;
   }
 
+  .contact-cta.container {
+    width: auto;
+    margin-inline: 20px;
+    margin-bottom: 8px;
+    padding: 24px 20px;
+  }
+
+  .footer.container {
+    padding-inline: 24px;
+    padding-bottom: 36px;
+  }
+
   .wa-float {
     left: calc(12px + env(safe-area-inset-left, 0px));
     bottom: calc(12px + env(safe-area-inset-bottom, 0px));
@@ -1397,6 +1426,15 @@ h1 span {
 
   .hero-actions .btn {
     min-height: 48px;
+  }
+
+  .contact-cta.container {
+    margin-inline: 18px;
+    padding: 22px 18px;
+  }
+
+  .footer.container {
+    padding-inline: 22px;
   }
 }
 
@@ -1439,7 +1477,7 @@ h1 span {
 }
 
 .privacy-card h1 {
-  margin: 0 0 16px;
+  margin: 0 0 8px;
   font-size: clamp(2rem, 4vw, 3rem);
   max-width: none;
   line-height: 1.1;
@@ -1448,6 +1486,26 @@ h1 span {
 .privacy-card h2 {
   margin: 24px 0 10px;
   font-size: clamp(1.15rem, 2.1vw, 1.7rem);
+}
+
+.privacy-card h3 {
+  margin: 18px 0 8px;
+  font-size: 1.05rem;
+}
+
+.privacy-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #2e63df;
+}
+
+.privacy-meta {
+  margin: 0 0 18px !important;
+  color: var(--muted) !important;
+  font-weight: 600;
 }
 
 .privacy-card p {
@@ -1467,4 +1525,15 @@ h1 span {
 
 .privacy-card li + li {
   margin-top: 8px;
+}
+
+.privacy-card ul + p,
+.privacy-card ul + h2,
+.privacy-card ul + h3 {
+  margin-top: 12px;
+}
+
+.privacy-card a {
+  color: var(--brand);
+  font-weight: 700;
 }
