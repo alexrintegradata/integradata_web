@@ -7,14 +7,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && firebase deploy --only hosting"
+    "start": "superstatic dist --port $PORT --host 0.0.0.0",
+    "deploy": "astro build && firebase deploy --only hosting --project proyecto-rag-scrapia"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^5.7.2"
-    "start": "superstatic dist --port $PORT --host 0.0.0.0"
-  },
-  "dependencies": {
     "astro": "^5.7.2",
     "superstatic": "^11.0.0"
   }
